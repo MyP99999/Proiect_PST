@@ -36,7 +36,7 @@ public class ClockingController {
         Clocking savedClocking = clockingService.save(clocking);
         return ResponseEntity.ok(savedClocking);
     }
-    
+
     @PatchMapping("/{id}/end")
     public ResponseEntity<Clocking> updateClockingEndTime(@PathVariable Integer id, @RequestBody Time newEndTime) {
         Clocking updatedClocking = clockingService.updateEndTime(id, newEndTime);

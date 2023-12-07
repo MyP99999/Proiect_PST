@@ -1,5 +1,6 @@
 package com.FCSB.FCSB.controllers;
 
+import com.FCSB.FCSB.entities.Department;
 import com.FCSB.FCSB.entities.Employee;
 import com.FCSB.FCSB.services.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,6 +59,13 @@ public class EmployeeController {
                     employeeService.deleteEmployee(id);
                     return ResponseEntity.ok().build();
                 })
+                .orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
+    @PatchMapping("/{id}/department")
+    public ResponseEntity<Employee> updateEmployeeDepartment(@PathVariable Integer id, @RequestBody Department newDepartment) {
+        return employeeService.updateEmployeeDepartment(id, newDepartment)
+                .map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 }

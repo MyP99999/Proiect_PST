@@ -1,5 +1,6 @@
 package com.FCSB.FCSB.services;
 
+import com.FCSB.FCSB.entities.Department;
 import com.FCSB.FCSB.entities.Employee;
 import com.FCSB.FCSB.repositories.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,5 +43,15 @@ public class EmployeeService {
     public void deleteEmployee(Integer id) {
         employeeRepository.deleteById(id);
     }
+
+    // in EmployeeService class
+
+    public Optional<Employee> updateEmployeeDepartment(Integer employeeId, Department newDepartment) {
+        return findEmployeeById(employeeId).map(employee -> {
+            employee.setDepartment(newDepartment);
+            return employeeRepository.save(employee);
+        });
+    }
+
 
 }
