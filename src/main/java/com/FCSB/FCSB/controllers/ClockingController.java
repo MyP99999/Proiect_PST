@@ -6,10 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.Time;
 import java.util.List;
 
 @RestController
-@RequestMapping("/clockings")
+@RequestMapping("/clocking")
 public class ClockingController {
 
     private final ClockingService clockingService;
@@ -20,7 +21,7 @@ public class ClockingController {
     }
 
     @GetMapping
-    public List<Clocking> getAllClockings() {
+    public List<Clocking> getAllClocking() {
         return clockingService.findAll();
     }
 
@@ -34,6 +35,12 @@ public class ClockingController {
     public ResponseEntity<Clocking> createClocking(@RequestBody Clocking clocking) {
         Clocking savedClocking = clockingService.save(clocking);
         return ResponseEntity.ok(savedClocking);
+    }
+    
+    @PatchMapping("/{id}/end")
+    public ResponseEntity<Clocking> updateClockingEndTime(@PathVariable Integer id, @RequestBody Time newEndTime) {
+        Clocking updatedClocking = clockingService.updateEndTime(id, newEndTime);
+        return ResponseEntity.ok(updatedClocking);
     }
 
 }

@@ -5,6 +5,7 @@ import com.FCSB.FCSB.repositories.ClockingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.Time;
 import java.util.List;
 
 @Service
@@ -28,5 +29,14 @@ public class ClockingService {
     public Clocking save(Clocking clocking) {
         return clockingRepository.save(clocking);
     }
+
+    // in ClockingService class
+
+    public Clocking updateEndTime(Integer id, Time newEndTime) {
+        Clocking clocking = findById(id); // or handle null
+        clocking.setEnd(newEndTime);
+        return clockingRepository.save(clocking);
+    }
+
 
 }
