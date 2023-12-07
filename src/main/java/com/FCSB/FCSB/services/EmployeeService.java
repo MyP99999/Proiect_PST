@@ -22,9 +22,18 @@ public class EmployeeService {
         return employeeRepository.findAll();
     }
 
+    public Employee save(Employee user) {
+        return employeeRepository.save(user);
+    }
     public Optional<Employee> findEmployeeById(Integer id) {
         return employeeRepository.findById(id);
     }
+
+    public Optional<Employee> findByEmail(String email) {
+
+        return employeeRepository.findByEmail(email);
+    }
+
 
     public Employee saveEmployee(Employee employee) {
         return employeeRepository.save(employee);

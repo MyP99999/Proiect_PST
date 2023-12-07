@@ -34,4 +34,8 @@ public class Employee {
     @ManyToOne
     @JoinColumn(name = "dept_id", nullable = false)
     private Department department;
+
+    @OneToOne
+    @JoinColumn(name = "role_id", nullable = false)
+    private Role role;
 }
