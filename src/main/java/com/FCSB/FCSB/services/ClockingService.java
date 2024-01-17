@@ -34,6 +34,7 @@ public class ClockingService {
 
     public Clocking updateEndTime(Integer id, Time newEndTime) {
         Clocking clocking = findById(id); // or handle null
+        System.out.println(clocking);
         clocking.setEnd(newEndTime);
         return clockingRepository.save(clocking);
     }

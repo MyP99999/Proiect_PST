@@ -1,5 +1,6 @@
 package com.FCSB.FCSB.controllers;
 
+import com.FCSB.FCSB.dto.ClockingEndTimeDTO;
 import com.FCSB.FCSB.entities.Clocking;
 import com.FCSB.FCSB.services.ClockingService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,9 +39,11 @@ public class ClockingController {
     }
 
     @PatchMapping("/{id}/end")
-    public ResponseEntity<Clocking> updateClockingEndTime(@PathVariable Integer id, @RequestBody Time newEndTime) {
+    public ResponseEntity<Clocking> updateClockingEndTime(@PathVariable Integer id, @RequestBody ClockingEndTimeDTO clockingEndTimeDTO) {
+        Time newEndTime = Time.valueOf(clockingEndTimeDTO.getNewEndTime()); // Convert String to Time
         Clocking updatedClocking = clockingService.updateEndTime(id, newEndTime);
         return ResponseEntity.ok(updatedClocking);
     }
+
 
 }

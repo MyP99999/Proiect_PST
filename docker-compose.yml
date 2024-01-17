@@ -9,8 +9,8 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: 'admin'
       MYSQL_DATABASE: 'employees'
-      MYSQL_USER: 'root'
-      MYSQL_PASSWORD: ''
+#      MYSQL_USER: 'root'
+#      MYSQL_PASSWORD: 'admin'
     ports:
       - "3366:3306"
   backend:
