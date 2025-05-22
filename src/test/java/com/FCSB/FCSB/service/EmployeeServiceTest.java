@@ -1,7 +1,8 @@
-package com.FCSB.FCSB.services;
+package com.FCSB.FCSB.service;
 
 import com.FCSB.FCSB.entities.Employee;
 import com.FCSB.FCSB.repositories.EmployeeRepository;
+import com.FCSB.FCSB.services.EmployeeService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
