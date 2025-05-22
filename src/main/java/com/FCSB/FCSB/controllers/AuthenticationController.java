@@ -2,6 +2,7 @@ package com.FCSB.FCSB.controllers;
 
 
 import com.FCSB.FCSB.auth.AuthenticationRequest;
+import com.FCSB.FCSB.auth.RegisterRequest;
 import com.FCSB.FCSB.responses.MessageResponse;
 import com.FCSB.FCSB.services.AuthenticationService;
 import com.FCSB.FCSB.validations.RegisterValidation;
@@ -22,7 +23,7 @@ public class AuthenticationController {
     private final RegisterValidation registerValidation;
 
     @PostMapping("/register")
-    public ResponseEntity<?> register(@RequestBody com.example.MyPImageToGPT.auth.RegisterRequest request)
+    public ResponseEntity<?> register(@RequestBody RegisterRequest request)
     {
         ResponseEntity<Object> validationResponse = registerValidation.validateRegistration(request);
         if (request.getLastName() == null || request.getLastName().isEmpty() ||

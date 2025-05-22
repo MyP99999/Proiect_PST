@@ -3,6 +3,7 @@ package com.FCSB.FCSB.services;
 
 import com.FCSB.FCSB.auth.AuthenticationRequest;
 import com.FCSB.FCSB.auth.AuthenticationResponse;
+import com.FCSB.FCSB.auth.RegisterRequest;
 import com.FCSB.FCSB.entities.Employee;
 import com.FCSB.FCSB.entities.Role;
 import com.FCSB.FCSB.jwt.JwtService;
@@ -34,7 +35,7 @@ public class AuthenticationService {
     @Autowired
     private RegisterValidation registerValidation;
 
-    public AuthenticationResponse register(com.example.MyPImageToGPT.auth.RegisterRequest request) {
+    public AuthenticationResponse register(RegisterRequest request) {
 
 
         Employee newUser = new Employee();

@@ -32,10 +32,10 @@ public class Employee {
     private String password;
 
     @ManyToOne
-    @JoinColumn(name = "dept_id", nullable = false)
+    @JoinColumn(name = "dept_id", nullable = true)
     private Department department;
 
     @OneToOne
-    @JoinColumn(name = "role_id", nullable = false)
+    @JoinColumn(name = "role_id", nullable = true)
     private Role role;
 }

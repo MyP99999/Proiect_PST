@@ -30,7 +30,6 @@ public class ClockingService {
         return clockingRepository.save(clocking);
     }
 
-    // in ClockingService class
 
     public Clocking updateEndTime(Integer id, Time newEndTime) {
         Clocking clocking = findById(id); // or handle null

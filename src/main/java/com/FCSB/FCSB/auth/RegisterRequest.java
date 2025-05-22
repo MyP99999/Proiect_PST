@@ -1,4 +1,4 @@
-package com.example.MyPImageToGPT.auth;
+package com.FCSB.FCSB.auth;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -3,7 +3,7 @@ package com.FCSB.FCSB.validations;
 import com.FCSB.FCSB.entities.Employee;
 import com.FCSB.FCSB.services.EmployeeService;
 import com.FCSB.FCSB.utils.LogAndResponseUtil;
-import com.example.MyPImageToGPT.auth.RegisterRequest;
+import com.FCSB.FCSB.auth.RegisterRequest;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
