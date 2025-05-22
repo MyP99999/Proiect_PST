@@ -1,9 +1,10 @@
-package com.FCSB.FCSB.services;
+package com.FCSB.FCSB.service;
 
 import com.FCSB.FCSB.entities.Clocking;
 import com.FCSB.FCSB.entities.Employee;
 import com.FCSB.FCSB.repositories.ClockingRepository;
 
+import com.FCSB.FCSB.services.ClockingService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
